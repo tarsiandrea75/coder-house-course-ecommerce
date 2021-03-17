@@ -1,10 +1,8 @@
-import ItemListContainer from "./ItemListContainer";
-
-import Item from './Item';
+import Item from '../Item/Item';
 
 const ItemList = (props) => (
     <>
-        <h1>Lista dinamica mockeada</h1>
+        <h1>Listado Articulos</h1>
         <ul>
             {props.items.map((x, i) => (
                 <Item key={i} item={x} />
@@ -12,6 +10,5 @@ const ItemList = (props) => (
         </ul>
     </>
 );
-
 
 export default ItemList;

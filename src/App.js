@@ -1,14 +1,14 @@
 import {React, useEffect, useState} from 'react';
 
-import ItemListContainer from './components/ItemListContainer';
-import NavBar from './components/NavBar';
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import NavBar from './components/NavBar/NavBar';
 
 import './App.css';
 
 //Mocked Pics
-import pizza from './pizza.png';
-import orecchiette from './orecchiette.png';
-import wine from './wine.png';
+import pizza from './Assets/Images/pizza.png';
+import orecchiette from './Assets/Images/orecchiette.png';
+import wine from './Assets/Images/wine.png';
 
 function App() {
 
@@ -46,9 +46,11 @@ function App() {
                     2000
                 );
             }).then((result) => setItems(result));    
-        }
+        },
+        []
     );
-
+    console.log("Agregando el parametro [] a useEffect evito que se llame en loop infinito la promisa, ya que el el didMount siempre se modificaba el listado");
+    
     return <>           
             <NavBar />   
             <div className="nav navbar-nav navbar-center">
